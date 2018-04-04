@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+    <h:head>
+      <h:outputStylesheet library="css" name="main.css"  />
+    </h:head>
+    <h:body>
+
+    	<h1>Alle Studenten</h1>
+      <a href="CreateStudent.xhtml">Schüler eintragen</a>
+
+    		<h:dataTable value="#{student.studentList}" var="s"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+    		>
+
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Nachname</f:facet>
+    				<!-- row record -->
+                    <h:message for="s.getNachname"></h:message> 
+    			</h:column>
+
+    			<h:column>
+                    <f:facet name="header">Vorname</f:facet>
+                    <h:message for="s.getVorname"></h:message> 
+    			</h:column>
+
+    			<h:column>
+    				<f:facet name="header">Adresse</f:facet>
+                    <h:message for="s.getAdresse"></h:message> 
+    			</h:column>
+
+                <h:column>
+                    <f:facet name="header">Ort</f:facet>
+                    <h:message for="s.getPostleitzahl"></h:message> 
+                </h:column>
+
+    			<h:column>
+                    <f:facet name="header">Ort</f:facet>
+                    <h:message for="s.getOrt"></h:message> 
+    			</h:column>
+
+    		</h:dataTable>
+
+    </h:body>
+</html>
