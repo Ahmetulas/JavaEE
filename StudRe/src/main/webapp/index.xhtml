@@ -12,18 +12,20 @@
     <h:body>
 
     	<h1>Alle Studenten</h1>
-      <a href="CreateStudent.xhtml">Schüler eintragen</a>
 
+        <h:form>        
     		<h:dataTable value="#{student.studentList}" var="s"
     			styleClass="order-table"
     			headerClass="order-table-header"
     			rowClasses="order-table-odd-row,order-table-even-row"
-    		>
+            >
+                 <h:column>
+    				<f:facet name="header">Martikelnummer</f:facet>
+                    <h:message for="s.getMartikelnummer"></h:message> 
+    			</h:column>    
 
     			<h:column>
-    				<!-- column header -->
     				<f:facet name="header">Nachname</f:facet>
-    				<!-- row record -->
                     <h:message for="s.getNachname"></h:message> 
     			</h:column>
 
@@ -45,9 +47,40 @@
     			<h:column>
                     <f:facet name="header">Ort</f:facet>
                     <h:message for="s.getOrt"></h:message> 
-    			</h:column>
-
-    		</h:dataTable>
+                </h:column>       
+    </h:dataTable>
+                     
+         <h3>Add Student</h3>
+         <hr/>
+         
+         <table>
+            <tr>
+               <td>Vorname :</td>
+               <td><input size = "20" value = "#{s.vorname}" /></td>
+            </tr>
+            
+            <tr>
+               <td>Nachname :</td>
+               <td><input size = "20" value = "#{s.nachname}" /></td>
+            </tr>
+            
+            <tr>
+               <td>Ort :</td>
+               <td><input size = "20" value = "#{s.ort}" /></td>
+            </tr>
+            
+            <tr>
+               <td>Adresse:</td>
+               <td><input size = "20" value = "#{s.adresse}" /></td>
+            </tr>
+            
+            <tr>
+               <td> </td>
+               <td><h:commandButton value = "Add Student" 
+                  action = "#{student.addStudent}" /></td>
+            </tr>
+         </table>	  
+      </h:form>
 
     </h:body>
 </html>

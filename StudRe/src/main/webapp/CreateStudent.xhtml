@@ -15,7 +15,7 @@
 
 
     		<a href="index.xhtml">Zurück</a>
-        <form class="" action="index.html" method="post">
+        <form class="" action="index.html" method="get">
             <label>Vorname: </label><input type="text" name="vorname"></input><br></br>
             <label>Nachname: </label><input type="text" name="nachname"></input><br></br>
             <label>Adresse: </label><input type="text" name="adresse"></input><br></br>
@@ -23,5 +23,8 @@
             <label>Ort: </label><input type="text" name="ort"></input><br></br>
          <input type="submit" value="Schüler erstellen"></input>
         </form>
+
+        <h:message for="s.getNachname"></h:message> 
+        
     </h:body>
 </html>
